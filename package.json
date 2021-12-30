@@ -1,0 +1,82 @@
+{
+    "name": "reveal-button",
+    "publisher": "anweber",
+    "version": "1.0.0",
+    "description": "Reveal Button in Sidebar",
+    "displayName": "Reveal Button",
+    "main": "src/extension.js",
+    "browser": "src/extension.js",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AnWeber/vscode-reveal-button"
+    },
+    "bugs": {
+        "url": "https://github.com/AnWeber/vscode-reveal-button/issues"
+    },
+    "qna": "https://github.com/AnWeber/vscode-reveal-button/discussions",
+    "license": "MIT",
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "reveal",
+        "sidebar"
+    ],
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "extensionKind": [
+        "workspace"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "capabilities": {
+        "virtualWorkspaces": true,
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
+    "contributes": {
+        "configuration": {
+            "title": "Reveal-Button",
+            "properties": {
+                "reveal-button.editor_active": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Activate editor title menu"
+                },
+                "reveal-button.explorer_active": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Activate explorer title menu"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "reveal-button.reveal",
+                "title": "reveal active file in sidebar",
+                "icon": "$(record)",
+                "shortTitle": "reveal"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "reveal-button.reveal",
+                    "group": "navigation",
+                    "when": "config.reveal-button.editor_active"
+                }
+            ],
+            "view/title": [
+                {
+                    "command": "reveal-button.reveal",
+                    "when": "view == workbench.explorer.fileView && editorIsOpen && config.reveal-button.explorer_active",
+                    "group": "navigation"
+                }
+            ]
+        }
+    }
+}
