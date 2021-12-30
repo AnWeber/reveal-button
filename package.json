@@ -1,7 +1,7 @@
 {
     "name": "reveal-button",
     "publisher": "anweber",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Reveal Button in Sidebar",
     "displayName": "Reveal Button",
     "main": "src/extension.js",

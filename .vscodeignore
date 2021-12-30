@@ -1,6 +1,5 @@
 .github/**
 .vscode/**
 test/**
-src/**
 examples/**
 .gitignore
