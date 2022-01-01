@@ -1,7 +1,7 @@
 {
     "name": "reveal-button",
     "publisher": "anweber",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Reveal Button in Sidebar",
     "displayName": "Reveal Button",
     "main": "src/extension.js",
@@ -9,12 +9,12 @@
     "icon": "icon.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/AnWeber/vscode-reveal-button"
+        "url": "https://github.com/AnWeber/reveal-button"
     },
     "bugs": {
-        "url": "https://github.com/AnWeber/vscode-reveal-button/issues"
+        "url": "https://github.com/AnWeber/reveal-button/issues"
     },
-    "qna": "https://github.com/AnWeber/vscode-reveal-button/discussions",
+    "qna": "https://github.com/AnWeber/reveal-button/discussions",
     "license": "MIT",
     "categories": [
         "Other"
@@ -51,6 +51,16 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Activate explorer title menu"
+                },
+                "reveal-button.reveal_in_os_editor_active": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Activate editor title menu for reveal in OS"
+                },
+                "reveal-button.reveal_in_os_explorer_active": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Activate explorer title menu for reveal in OS"
                 }
             }
         },
@@ -60,6 +70,11 @@
                 "title": "reveal active file in sidebar",
                 "icon": "$(record)",
                 "shortTitle": "reveal"
+            },{
+                "command": "reveal-button.revealInOS",
+                "title": "reveal active file in OS",
+                "icon": "$(root-folder-opened)",
+                "shortTitle": "reveal"
             }
         ],
         "menus": {
@@ -68,12 +83,22 @@
                     "command": "reveal-button.reveal",
                     "group": "navigation",
                     "when": "config.reveal-button.editor_active"
+                },
+                {
+                    "command": "reveal-button.revealInOS",
+                    "group": "navigation",
+                    "when": "config.reveal-button.reveal_in_os_editor_active"
                 }
             ],
             "view/title": [
                 {
                     "command": "reveal-button.reveal",
                     "when": "view == workbench.explorer.fileView && editorIsOpen && config.reveal-button.explorer_active",
+                    "group": "navigation"
+                },
+                {
+                    "command": "reveal-button.revealInOS",
+                    "when": "view == workbench.explorer.fileView && editorIsOpen && config.reveal-button.reveal_in_os_editor_active",
                     "group": "navigation"
                 }
             ]
