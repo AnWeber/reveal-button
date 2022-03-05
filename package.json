@@ -1,7 +1,7 @@
 {
     "name": "reveal-button",
     "publisher": "anweber",
-    "version": "1.0.2",
+    "version": "1.2.0",
     "description": "Reveal Button in Sidebar",
     "displayName": "Reveal Button",
     "main": "src/extension.js",
@@ -24,7 +24,7 @@
         "sidebar"
     ],
     "engines": {
-        "vscode": "^1.60.0"
+        "vscode": "^1.65.0"
     },
     "extensionKind": [
         "workspace"
@@ -68,7 +68,7 @@
             {
                 "command": "reveal-button.reveal",
                 "title": "reveal active file in sidebar",
-                "icon": "$(record)",
+                "icon": "$(target)",
                 "shortTitle": "reveal"
             },{
                 "command": "reveal-button.revealInOS",
