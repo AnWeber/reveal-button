@@ -1,7 +1,7 @@
 {
     "name": "reveal-button",
     "publisher": "anweber",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Reveal Button in Sidebar",
     "displayName": "Reveal Button",
     "main": "src/extension.js",
@@ -98,7 +98,7 @@
                 },
                 {
                     "command": "reveal-button.revealInOS",
-                    "when": "view == workbench.explorer.fileView && editorIsOpen && config.reveal-button.reveal_in_os_editor_active",
+                    "when": "view == workbench.explorer.fileView && editorIsOpen && config.reveal-button.reveal_in_os_explorer_active",
                     "group": "navigation"
                 }
             ]
